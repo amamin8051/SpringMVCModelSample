@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{/css/style.css}">
+    <script>
+        window.addEventListener("load", ev => {
+            document.querySelector("#autoFill").addEventListener("click", ev => {
+                document.querySelector("#name").value = "Shigeo Ohtsuka";
+                document.querySelector("#age").value = 45;
+                document.querySelector("#birthday").value = "1977-08-15";
+            });
+        });
+    </script>
+    <title>Show Input Form</title>
+</head>
+<body>
+<div id="wrap">
+    <form action="#" method="post" th:action="@{/confirmdata}">
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <th>Age:</th>
+                <td><input type="number" name="age" id="age" min="0" max="120"></td>
+            </tr>
+            <tr>
+                <th>Birthday:</th>
+                <td><input type="date" name="birthday" id="birthday"></td>
+            </tr>
+        </table>
+        <p id="submitP">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <input type="button" value="Auto Fill" id="autoFill">
+        </p>
+    </form>
+</div>
+</body>
+</html>

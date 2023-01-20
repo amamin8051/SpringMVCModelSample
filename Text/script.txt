@@ -1,0 +1,10 @@
+window.addEventListener("load", function () {
+    document.addEventListener("change", function (ev) {
+        document.querySelector("#filePath").value = ev.target.files[0].name
+        const reader = new FileReader();
+        reader.readAsText(ev.target.files[0], 'UTF-8');
+        reader.addEventListener("load", function (ev) {
+            document.querySelector("#fileData").value = reader.result;
+        });
+    });
+});
