@@ -21,9 +21,8 @@ th, td{
 }
 
 ol{
-    list-style-type: none;
+    margin: 0px;
 }
-
 h1 {
     position: relative;
     background: #dfefff;

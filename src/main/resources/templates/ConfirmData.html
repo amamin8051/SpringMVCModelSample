@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/static/css/style.css" th:href="@{/css/style.css}">
     <title>Confirm Data</title>
 </head>
@@ -9,16 +11,28 @@
 <div id="wrap">
     <table>
         <tr>
-            <th>Name:</th>
+            <th>名前：</th>
             <td th:text="|${form.name}|"></td>
         </tr>
         <tr>
-            <th>Age:</th>
-            <td th:text="|${form.age}|"></td>
+            <th>年齢：</th>
+            <td th:text="|${form.age}歳|"></td>
         </tr>
         <tr>
-            <th>Birthday:</th>
-            <td th:text="|${#temporals.format(form.birthday, ' yyyy / MM / dd ')}|"></td>
+            <th>性別：</th>
+            <td th:text="|${form.gender}|"></td>
+        </tr>
+        <tr>
+            <th>生年月日：</th>
+            <td th:text="|${#temporals.format(form.birthday, 'yyyy年MM月dd日')}生まれ|"></td>
+        </tr>
+        <tr>
+            <th>好きな色：</th>
+            <td th:text="|${form.favoriteColor}|" th:style="|background-color: ${form.favoriteColor}|"></td>
+        </tr>
+        <tr>
+            <th>好きな果物：</th>
+            <td th:text="|${form.favoriteFruit}|"></td>
         </tr>
     </table>
 </div>
